@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListOnlyResizedBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::resized-images-task1-2026"
+    },
+    {
+      "Sid": "DeleteOnlyObjectsInsideResizedBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:DeleteObject"
+      ],
+      "Resource": "arn:aws:s3:::resized-images-task1-2026/*"
+    },
+    {
+      "Sid": "WriteCloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
